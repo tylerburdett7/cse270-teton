@@ -15,8 +15,9 @@ from selenium.webdriver.firefox.options import Options
 class TestSmokeTests():
   def setup_method(self, method):
     options = Options()
-    options.add_argument("--headless=new")
+    options.add_argument("--headless")
     self.driver = webdriver.Firefox(options=options)
+    self.driver.implicitly_wait(10)
     self.vars = {}
   
   def teardown_method(self, method):
